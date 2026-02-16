@@ -82,10 +82,10 @@ export default function TimesheetTable({ data }: TimesheetTableProps) {
       </div>
 
       {/* Pagination */}
-      <div className="flex items-center justify-between pt-4">
-        <div className="text-sm text-gray-600">
-          Rows per page:{" "}
-          <select className="border-none bg-transparent font-medium focus:outline-none">
+      <div className="flex items-center gap-6 pt-4">
+        <div className="flex items-center gap-2 text-sm text-gray-600">
+          <span>Rows per page:</span>
+          <select className="border-none bg-transparent font-medium focus:outline-none cursor-pointer">
             <option>100</option>
             <option>50</option>
             <option>25</option>
@@ -93,7 +93,7 @@ export default function TimesheetTable({ data }: TimesheetTableProps) {
         </div>
         <div className="flex items-center gap-4">
           <span className="text-sm text-gray-600">1-100 of 500</span>
-          <div className="flex gap-2">
+          <div className="flex gap-1">
             <button className="p-1 hover:bg-gray-100 rounded transition-colors">
               <svg
                 className="w-5 h-5 text-gray-600"

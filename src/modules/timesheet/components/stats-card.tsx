@@ -7,7 +7,7 @@ interface StatsCardProps {
 
 export default function StatsCard({ label, value, icon, bgColor }: StatsCardProps) {
   return (
-    <div className="bg-white rounded-xl p-4 border border-gray-100">
+    <div className="bg-white rounded-lg p-4 border border-gray-100 shadow-sm">
       <div className="flex items-start justify-between mb-2">
         <div className={`w-10 h-10 rounded-lg ${bgColor} flex items-center justify-center`}>
           {icon}

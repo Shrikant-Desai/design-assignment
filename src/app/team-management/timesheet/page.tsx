@@ -13,9 +13,8 @@ import {
 
 export default function TimesheetPage() {
   return (
-    <DashboardLayout>
-      <div className="space-y-6">
-        {/* Breadcrumb */}
+    <DashboardLayout
+      headerContent={
         <div className="flex items-center gap-2 text-sm text-gray-600">
           <span>Team Management</span>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -23,34 +22,38 @@ export default function TimesheetPage() {
           </svg>
           <span className="text-gray-900 font-medium">Timesheet</span>
         </div>
-
+      }
+    >
+      <div className="space-y-6">
         {/* Search and Filter Bar */}
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4">
           {/* Search */}
-          <div className="flex-1 max-w-md relative">
+          <div className="flex-1 relative">
             <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
               type="text"
               placeholder="Search by Employee Name or Number"
-              className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
 
-          {/* Date Range */}
-          <button className="flex items-center gap-2 px-4 py-2.5 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-            <CalendarIcon className="w-5 h-5 text-gray-600" />
-            <span className="text-sm text-gray-700">Nov 6, 2025 - Nov 6, 2025</span>
-          </button>
+          <div className="flex items-center gap-3 overflow-x-auto pb-1 md:pb-0">
+            {/* Date Range */}
+            <button className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors text-sm whitespace-nowrap bg-white">
+              <CalendarIcon className="w-5 h-5 text-gray-600" />
+              <span className="text-gray-700">Nov 6, 2025 - Nov 6, 2025</span>
+            </button>
 
-          {/* Filter */}
-          <button className="p-2.5 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-            <FunnelIcon className="w-5 h-5 text-gray-600" />
-          </button>
+            {/* Filter */}
+            <button className="p-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors bg-white shrink-0">
+              <FunnelIcon className="w-5 h-5 text-gray-600" />
+            </button>
 
-          {/* Download */}
-          <button className="p-2.5 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-            <ArrowDownTrayIcon className="w-5 h-5 text-gray-600" />
-          </button>
+            {/* Download */}
+            <button className="p-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors bg-white shrink-0">
+              <ArrowDownTrayIcon className="w-5 h-5 text-gray-600" />
+            </button>
+          </div>
         </div>
 
         {/* Stats Cards */}

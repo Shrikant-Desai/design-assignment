@@ -27,28 +27,28 @@ export default function PeopleGrid({ employees }: PeopleGridProps) {
           <input
             type="text"
             placeholder="Search by Employee Name or Number"
-            className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
         </div>
 
         {/* Action Buttons */}
         <div className="flex items-center gap-2">
-          <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+          <button className="p-2 hover:bg-gray-100 rounded-md transition-colors">
             <ArrowDownTrayIcon className="w-5 h-5 text-gray-600" />
           </button>
-          <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+          <button className="p-2 hover:bg-gray-100 rounded-md transition-colors">
             <FunnelIcon className="w-5 h-5 text-gray-600" />
           </button>
-          <button className="p-2 bg-gray-900 hover:bg-gray-800 text-white rounded-lg transition-colors">
+          <button className="p-2 bg-[#3D3936] hover:bg-[#2d2926] text-white rounded-md transition-colors">
             <PlusIcon className="w-5 h-5" />
           </button>
-          <button className="p-2 bg-gray-900 hover:bg-gray-800 text-white rounded-lg transition-colors">
+          <button className="p-2 bg-[#3D3936] hover:bg-[#2d2926] text-white rounded-md transition-colors">
             <Squares2X2Icon className="w-5 h-5" />
           </button>
-          <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+          <button className="p-2 hover:bg-gray-100 rounded-md transition-colors">
             <ListBulletIcon className="w-5 h-5 text-gray-600" />
           </button>
-          <button className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+          <button className="p-2 hover:bg-gray-100 rounded-md transition-colors">
             <ChartBarIcon className="w-5 h-5 text-gray-600" />
           </button>
         </div>
@@ -62,10 +62,10 @@ export default function PeopleGrid({ employees }: PeopleGridProps) {
       </div>
 
       {/* Pagination */}
-      <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-        <div className="text-sm text-gray-600">
-          Rows per page:{" "}
-          <select className="border-none bg-transparent font-medium focus:outline-none">
+      <div className="flex items-center gap-6 pt-4 border-t border-gray-200">
+        <div className="flex items-center gap-2 text-sm text-gray-600">
+          <span>Rows per page:</span>
+          <select className="border-none bg-transparent font-medium focus:outline-none cursor-pointer">
             <option>100</option>
             <option>50</option>
             <option>25</option>
@@ -73,7 +73,7 @@ export default function PeopleGrid({ employees }: PeopleGridProps) {
         </div>
         <div className="flex items-center gap-4">
           <span className="text-sm text-gray-600">1-100 of 500</span>
-          <div className="flex gap-2">
+          <div className="flex gap-1">
             <button className="p-1 hover:bg-gray-100 rounded transition-colors">
               <svg
                 className="w-5 h-5 text-gray-600"

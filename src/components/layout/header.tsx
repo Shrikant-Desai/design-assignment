@@ -1,14 +1,25 @@
 "use client";
 
-import { BellIcon, EnvelopeIcon, CalendarIcon } from "@heroicons/react/24/outline";
+import { BellIcon, EnvelopeIcon, CalendarIcon, Bars3Icon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
-export default function Header() {
+interface HeaderProps {
+  onMenuClick?: () => void;
+  children?: React.ReactNode;
+}
+
+export default function Header({ onMenuClick, children }: HeaderProps) {
   return (
     <header className="h-16 bg-white border-b border-gray-200 flex items-center justify-between px-4 md:px-6">
-      {/* Breadcrumb or Page Title - will be passed as children */}
-      <div className="flex items-center gap-2 text-sm text-gray-600">
-        {/* This will be populated by individual pages */}
+      {/* Left side - Hamburger menu & Breadcrumb */}
+      <div className="flex items-center gap-4">
+        <button
+          onClick={onMenuClick}
+          className="lg:hidden text-gray-600 hover:text-gray-900 transition-colors"
+        >
+          <Bars3Icon className="w-6 h-6" />
+        </button>
+        <div className="text-sm text-gray-600 flex items-center">{children}</div>
       </div>
 
       {/* Right side - Time, Icons, Profile */}

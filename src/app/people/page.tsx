@@ -4,13 +4,10 @@ import { employees } from "@/data/employees";
 
 export default function PeoplePage() {
   return (
-    <DashboardLayout>
+    <DashboardLayout
+      headerContent={<div className="text-xl font-semibold text-gray-900">People</div>}
+    >
       <div className="space-y-6">
-        {/* Page Title */}
-        <div>
-          <h1 className="text-2xl font-semibold text-gray-900">People</h1>
-        </div>
-
         {/* People Grid */}
         <PeopleGrid employees={employees} />
       </div>
