@@ -8,7 +8,6 @@ export default function PeoplePage() {
       headerContent={<div className="text-xl font-semibold text-gray-900">People</div>}
     >
       <div className="space-y-6">
-        {/* People Grid */}
         <PeopleGrid employees={employees} />
       </div>
     </DashboardLayout>

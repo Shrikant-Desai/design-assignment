@@ -25,38 +25,30 @@ export default function TimesheetPage() {
       }
     >
       <div className="space-y-6">
-        {/* Search and Filter Bar */}
         <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4">
-          {/* Search */}
           <div className="flex-1 relative">
-            <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <MagnifyingGlassIcon className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
               type="text"
               placeholder="Search by Employee Name or Number"
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full pl-11 pr-4 py-2 border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
 
           <div className="flex items-center gap-3 overflow-x-auto pb-1 md:pb-0">
-            {/* Date Range */}
-            <button className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors text-sm whitespace-nowrap bg-white">
+            <button className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors text-sm whitespace-nowrap bg-white">
               <CalendarIcon className="w-5 h-5 text-gray-600" />
               <span className="text-gray-700">Nov 6, 2025 - Nov 6, 2025</span>
             </button>
-
-            {/* Filter */}
-            <button className="p-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors bg-white shrink-0">
+            <button className="p-2 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors bg-white shrink-0">
               <FunnelIcon className="w-5 h-5 text-gray-600" />
             </button>
-
-            {/* Download */}
-            <button className="p-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors bg-white shrink-0">
+            <button className="p-2 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors bg-white shrink-0">
               <ArrowDownTrayIcon className="w-5 h-5 text-gray-600" />
             </button>
           </div>
         </div>
 
-        {/* Stats Cards */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           <StatsCard
             label="Total"
@@ -96,7 +88,6 @@ export default function TimesheetPage() {
           />
         </div>
 
-        {/* Timesheet Table */}
         <TimesheetTable data={timesheetData} />
       </div>
     </DashboardLayout>

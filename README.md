@@ -123,35 +123,6 @@ npm start
 
 8. **Image Hosting**: Employee avatars use placeholder images from `pravatar.cc`. In production, these would be hosted on a CDN or cloud storage.
 
-## 🚀 Deployment (Vercel)
-
-### Quick Deploy
-
-1. **Push to GitHub**
-
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin <your-repo-url>
-   git push -u origin main
-   ```
-
-2. **Deploy to Vercel**
-   - Visit [vercel.com](https://vercel.com)
-   - Click "New Project"
-   - Import your GitHub repository
-   - Vercel will auto-detect Next.js and configure build settings
-   - Click "Deploy"
-
-### Manual Deploy via CLI
-
-```bash
-npm install -g vercel
-vercel login
-vercel
-```
-
 ## 📱 Responsive Breakpoints
 
 - **Mobile**: < 640px (sm)
@@ -172,10 +143,4 @@ vercel
 
 6. **Accessibility**: Semantic HTML, proper heading hierarchy, and keyboard navigation support.
 
-## 📄 License
-
-This project is created as a frontend assignment submission.
-
 ---
-
-**Built with ❤️ using Next.js and Tailwind CSS**

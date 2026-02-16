@@ -9,7 +9,6 @@ interface TimesheetTableProps {
 export default function TimesheetTable({ data }: TimesheetTableProps) {
   return (
     <div className="space-y-4">
-      {/* Table Container */}
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead>
@@ -81,7 +80,6 @@ export default function TimesheetTable({ data }: TimesheetTableProps) {
         </table>
       </div>
 
-      {/* Pagination */}
       <div className="flex items-center gap-6 pt-4">
         <div className="flex items-center gap-2 text-sm text-gray-600">
           <span>Rows per page:</span>

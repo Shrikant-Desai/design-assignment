@@ -43,9 +43,7 @@ function SidebarContent({ isOpen = false, onClose }: SidebarProps) {
   const searchParams = useSearchParams();
   const [isTeamManagementOpen, setIsTeamManagementOpen] = useState(true);
 
-  // Helper to determine if a link is active
   const isActive = (href: string) => {
-    // Treat settings specially since it doesn't match the link href
     if (href === "/people?s=settings") {
       return pathname === "/people" && searchParams.get("s") === "settings";
     }
@@ -54,18 +52,12 @@ function SidebarContent({ isOpen = false, onClose }: SidebarProps) {
     const currentPath = pathname;
     const currentQuery = searchParams.toString();
 
-    // 1. Path must match
     if (currentPath !== linkPath) return false;
 
-    // 2. If link has query, it must be present in current query
     if (linkQuery) {
       return currentQuery.includes(linkQuery);
     }
 
-    // 3. If link has NO query (e.g. /people), it should match active state when NO generic query param is present
-    // or when the query param is "home" (if we consider Home as default)
-    // But since we have specific links for everything now, exact match logic is better.
-    // However, if we navigate to /people just like that, "People" should be active.
     if (searchParams.get("s")) return false;
 
     return true;
@@ -77,16 +69,13 @@ function SidebarContent({ isOpen = false, onClose }: SidebarProps) {
 
   return (
     <>
-      {/* Mobile Overlay */}
       {isOpen && <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={onClose} />}
 
-      {/* Sidebar */}
       <aside
         className={`fixed left-0 top-0 h-screen w-64 bg-[#3D3936] text-white flex flex-col z-50 transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         }`}
       >
-        {/* Logo */}
         <div className="p-6 flex items-center gap-3">
           <div className="text-2xl font-bold tracking-wider">CORE</div>
           <button onClick={onClose} className="ml-auto lg:hidden text-gray-400 hover:text-white">
@@ -94,7 +83,6 @@ function SidebarContent({ isOpen = false, onClose }: SidebarProps) {
           </button>
         </div>
 
-        {/* Navigation */}
         <nav className="flex-1 px-3 space-y-1 overflow-y-auto">
           {menuItems.map((item) => {
             const Icon = item.icon;
@@ -105,7 +93,7 @@ function SidebarContent({ isOpen = false, onClose }: SidebarProps) {
                 href={item.href}
                 onClick={handleLinkClick}
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
-                  active ? "bg-white text-gray-900" : "text-gray-300 hover:bg-gray-700"
+                  active ? "bg-white text-gray-900" : "text-gray-300"
                 }`}
               >
                 <Icon className="w-5 h-5" />
@@ -114,14 +102,11 @@ function SidebarContent({ isOpen = false, onClose }: SidebarProps) {
             );
           })}
 
-          {/* Team Management Expandable */}
           <div>
             <button
               onClick={() => setIsTeamManagementOpen(!isTeamManagementOpen)}
               className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
-                pathname.startsWith("/team-management")
-                  ? "bg-gray-700 text-white"
-                  : "text-gray-300 hover:bg-gray-700"
+                pathname.startsWith("/team-management") ? "text-white" : "text-gray-300"
               }`}
             >
               <UsersIcon className="w-5 h-5" />
@@ -141,9 +126,7 @@ function SidebarContent({ isOpen = false, onClose }: SidebarProps) {
                     href={item.href}
                     onClick={handleLinkClick}
                     className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
-                      isActive(item.href)
-                        ? "bg-white text-gray-900 font-medium"
-                        : "text-gray-300 hover:bg-gray-700"
+                      isActive(item.href) ? "bg-white text-gray-900 font-medium" : "text-gray-300"
                     }`}
                   >
                     {item.name}
@@ -162,7 +145,7 @@ function SidebarContent({ isOpen = false, onClose }: SidebarProps) {
                 href={item.href}
                 onClick={handleLinkClick}
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
-                  active ? "bg-white text-gray-900" : "text-gray-300 hover:bg-gray-700"
+                  active ? "bg-white text-gray-900" : "text-gray-300"
                 }`}
               >
                 <Icon className="w-5 h-5" />
@@ -172,7 +155,6 @@ function SidebarContent({ isOpen = false, onClose }: SidebarProps) {
           })}
         </nav>
 
-        {/* Settings at bottom */}
         <div className="p-3">
           <Link
             href="/people?s=settings"
