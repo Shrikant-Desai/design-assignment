@@ -1,0 +1,88 @@
+import { Employee } from "@/types";
+
+export const employees: Employee[] = [
+  {
+    id: "1",
+    name: "Ethan Lee",
+    role: "IT Specialist",
+    avatar: "https://i.pravatar.cc/150?img=12",
+    departmentTags: ["#FCD34D", "#34D399", "#60A5FA", "#F87171"],
+  },
+  {
+    id: "2",
+    name: "Emily Baker",
+    role: "Marketing Manager",
+    avatar: "https://i.pravatar.cc/150?img=45",
+    departmentTags: ["#A78BFA", "#34D399", "#F472B6", "#FCD34D"],
+  },
+  {
+    id: "3",
+    name: "Micheal Shaun",
+    role: "Sales Director",
+    avatar: "https://i.pravatar.cc/150?img=33",
+    departmentTags: ["#60A5FA", "#FCD34D", "#34D399", "#F87171"],
+  },
+  {
+    id: "4",
+    name: "Liam Carter",
+    role: "Product Designer",
+    avatar: "https://i.pravatar.cc/150?img=14",
+    departmentTags: ["#F472B6", "#A78BFA", "#34D399", "#FCD34D"],
+  },
+  {
+    id: "5",
+    name: "Grace Kim",
+    role: "Customer Lead",
+    avatar: "https://i.pravatar.cc/150?img=47",
+    departmentTags: ["#34D399", "#60A5FA", "#FCD34D", "#F87171"],
+  },
+  {
+    id: "6",
+    name: "Noah Williams",
+    role: "Finance Head",
+    avatar: "https://i.pravatar.cc/150?img=13",
+    departmentTags: ["#FCD34D", "#F472B6", "#34D399", "#60A5FA"],
+  },
+  {
+    id: "7",
+    name: "Isabella Rossi",
+    role: "Operations Manager",
+    avatar: "https://i.pravatar.cc/150?img=48",
+    departmentTags: ["#60A5FA", "#34D399", "#A78BFA", "#FCD34D"],
+  },
+  {
+    id: "8",
+    name: "Ava Thompson",
+    role: "HR Executive",
+    avatar: "https://i.pravatar.cc/150?img=44",
+    departmentTags: ["#F87171", "#FCD34D", "#34D399", "#60A5FA"],
+  },
+  {
+    id: "9",
+    name: "Oliver Smith",
+    role: "Software Engineer",
+    avatar: "https://i.pravatar.cc/150?img=15",
+    departmentTags: ["#34D399", "#A78BFA", "#FCD34D", "#F472B6"],
+  },
+  {
+    id: "10",
+    name: "Sophia Johnson",
+    role: "UX Researcher",
+    avatar: "https://i.pravatar.cc/150?img=49",
+    departmentTags: ["#F472B6", "#60A5FA", "#FCD34D", "#34D399"],
+  },
+  {
+    id: "11",
+    name: "James Brown",
+    role: "Data Analyst",
+    avatar: "https://i.pravatar.cc/150?img=11",
+    departmentTags: ["#60A5FA", "#F87171", "#34D399", "#FCD34D"],
+  },
+  {
+    id: "12",
+    name: "Emma Davis",
+    role: "Content Strategist",
+    avatar: "https://i.pravatar.cc/150?img=43",
+    departmentTags: ["#A78BFA", "#FCD34D", "#F472B6", "#34D399"],
+  },
+];
